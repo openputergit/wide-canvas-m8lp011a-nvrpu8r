@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVAM'S E-BOOK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .book-card {
+            transition: transform 0.2s;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-bold">SHIVAM'S E-BOOK</h1>
+                <div class="space-x-6">
+                    <a href="#" class="hover:text-gray-300">HOME</a>
+                    <a href="#" class="hover:text-gray-300">ABOUT SHIVAM</a>
+                    <a href="#" class="hover:text-gray-300">SHIVAM'S E-BOOK</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-white py-8">
+        <div class="container mx-auto px-4 max-w-3xl text-center space-y-4">
+            <p class="text-gray-700">A book is a collection of pages fastened along one edge, usually protected by a cover, containing written or printed content.</p>
+            <p class="text-gray-700">A physical object of pages (often paper) bound together, typically containing text or images, or a written work or composition.</p>
+            <p class="text-gray-700">It can also refer to a literary or scientific work, such as a novel, textbook, or dictionary, distinguished by its length and form.</p>
+            <p class="text-gray-700">A book can also refer to a major section or division of a longer work.</p>
+            <p class="text-gray-700">A book is an object recording information in the form of printed writing or images.</p>
+        </div>
+    </div>
+
+    <!-- Book Overview Section -->
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center mb-8">OVERVIEW OF ALL BOOKS</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Book Cards -->
+            <!-- Repeated 10 times for demonstration -->
+            <div class="book-card bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div class="w-48 h-64 bg-gray-200 mb-4 rounded-md"></div>
+                <h3 class="text-xl font-bold mb-2">MINDSET</h3>
+                <p class="text-gray-600 mb-4">BY Carol Dweck</p>
+                <button class="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors">
+                    VIEW DETAIL
+                </button>
+            </div>
+            <!-- Repeat for other books -->
+        </div>
+    </div>
+
+    <script>
+        // Add book cards dynamically
+        const bookContainer = document.querySelector('.grid');
+        for (let i = 1; i < 10; i++) {
+            const bookCard = bookContainer.children[0].cloneNode(true);
+            bookContainer.appendChild(bookCard);
+        }
+
+        // Add click event listeners to all detail buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Book details will be displayed here');
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
